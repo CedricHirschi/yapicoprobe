@@ -147,6 +147,7 @@ add_executable(${PROJECT}
         src/sw_dp_pio.c
         src/sw_lock.c
         src/usb_descriptors.c
+        src/ws2812.c
         src/cmsis-dap/dap_server.c
         src/cmsis-dap/dap_util.c
 )
@@ -212,6 +213,9 @@ add_compile_definitions(DAPLINK_HIC_ID=0x08154711)
 
 # required to get required DAPLink functions
 add_compile_definitions(DRAG_N_DROP_SUPPORT=1)
+
+
+pico_generate_pio_header(${PROJECT} ${CMAKE_CURRENT_LIST_DIR}/src/ws2812.pio)
 
 
 #--------------------------------------------------------------------------------------------------
